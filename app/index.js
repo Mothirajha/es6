@@ -1,11 +1,25 @@
-// Arrow functions - for anoynumous function
-setTimeout(function() {
-  console.log("Anoynumous Function executed");
-}, 1000);
+// Map
 
-setTimeout(() => {
-  console.log("Arrow Function executed");
-}, 2000);
+let values = [20,30,40];
 
-let execute = () => {console.log("Arrow Function as variable");}
-execute();
+let double = (n) => {
+  return n*2;
+}
+
+// let doubled = values.map(double);
+
+// let doubled = values.map((n) => {
+//   return n*2;
+// });
+
+let doubled = values.map((n) => n*2);
+
+console.log(doubled);
+
+
+// Filter
+let points = [7, 16, 21, 4, 3, 12, 10, 22, 5];
+
+let highScores = points.filter( (n) => n > 20 );
+
+console.log(highScores);
