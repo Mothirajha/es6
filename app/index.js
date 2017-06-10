@@ -1,25 +1,20 @@
-// Map
+//  Built in helper methods
+let a = "foo" + "o".repeat(50);
+console.log(a);
 
-let values = [20,30,40];
+let b = `boo${'o'.repeat(50)}`
+console.log(b);
 
-let double = (n) => {
-  return n*2;
-}
+console.log("butterfly".startsWith("butter"));
+console.log("butterfly".endsWith("butter"));
+console.log("butterfly".includes("butter"));
 
-// let doubled = values.map(double);
+let infiniteNumber = Infinity;
+console.log(Number.isFinite(infiniteNumber));
 
-// let doubled = values.map((n) => {
-//   return n*2;
-// });
+let finiteNumber = 10;
+console.log(Number.isFinite(finiteNumber));
 
-let doubled = values.map((n) => n*2);
-
-console.log(doubled);
-
-
-// Filter
-let points = [7, 16, 21, 4, 3, 12, 10, 22, 5];
-
-let highScores = points.filter( (n) => n > 20 );
-
-console.log(highScores);
+let powNumber = Math.pow(2, 54);
+console.log(Number.isFinite(powNumber));
+console.log(Number.isSafeInteger(powNumber));
