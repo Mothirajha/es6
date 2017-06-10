@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve('./build'),
     filename: 'bundle.js'
-  }
+  },
 
   module: {
     loaders: [
@@ -15,7 +15,8 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  
   devServer: {
     port: 3000,
     contentBase: './build',
