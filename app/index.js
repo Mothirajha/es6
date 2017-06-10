@@ -18,6 +18,21 @@ class Animal {
   }
 }
 
-let king = new Animal("Lion", "4.5");
-console.log(king);
-console.log(king.hello());
+// let king = new Animal("Tommy", "4.5");
+// console.log(king);
+// console.log(king.hello());
+
+
+class Dog extends Animal {
+  constructor(name, height, color) {
+    super(name, height);
+    this.color  = color;
+  }
+  hello(){
+    console.log(`Hi I'am ${this.name} from Dog class with coloer ${this.color}`);
+  }
+}
+
+let inherit = new Dog('Tommy', 2.2, "yellow");
+console.log(inherit);
+console.log(inherit.hello());
