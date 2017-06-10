@@ -35,3 +35,25 @@ let harry = new Wizard("Harry", "Gryffindor", "Owl");
 harry.petName = "Hedwig";
 console.log(harry);
 console.log(harry.info());
+
+// DataStructures
+let set = new Set();
+set.add(1);
+set.add("Test");
+set.add([1,2,3]);
+set.add({x: 10, y: 20});
+console.log(set);
+console.log(set.size);
+console.log(set.has(1));
+console.log(set.has(10));
+
+let number = [1, 12, 32, 343, 121]
+let numSet = new Set(number);
+console.log(number);
+for (let element of numSet.values()) {
+  console.log(element);
+}
+let alpha = "adfadfhasdofasdfasldfhaiigfwihrisdgfhasdfgasdfasdgahsfgda";
+let splitAlpha = alpha.split("");
+let alphaSet = new Set(splitAlpha);
+console.log(alphaSet);
