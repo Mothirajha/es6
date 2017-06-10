@@ -12,20 +12,26 @@ let inherit = new Dog('Tommy', 2.2, "yellow");
 console.log(inherit);
 inherit.hello();
 
-
-// Static Methods
-
-class Calculator {
-  static multiply(a, b){
-    return a*b;
-  }
-
-  static add(a, b){
-    return a+b;
-  }
-}
+// Static Class Method - Example
+import Calculator from './calculator'
 
 let a = Calculator.multiply(10, 2);
 console.log(a);
 let b = Calculator.add(10, 2);
 console.log(b);
+
+// Prototypes
+import Wizard from './wizard'
+
+Wizard.prototype.petName;
+
+// For prototype arrow function does not call this method - normal function call is best while writing prototype
+// Wizard.prototype.info = () => `I have ${this.pet} named ${this.petName}`;
+
+Wizard.prototype.info = function () {
+  return `I have ${this.pet} named ${this.petName}`
+};
+let harry = new Wizard("Harry", "Gryffindor", "Owl");
+harry.petName = "Hedwig";
+console.log(harry);
+console.log(harry.info());
