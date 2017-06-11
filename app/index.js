@@ -165,3 +165,32 @@ console.log(wallet.balance);
 console.log(wallet.deposit20());
 console.log(wallet.deposit20());
 console.log(wallet.check());
+
+
+// Generators
+
+function* letterMaker() {
+  yield 'a';
+  yield 'b';
+  yield 'c';
+}
+
+let letterGen = letterMaker();
+console.log(letterGen);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+
+
+function* countMaker(){
+  let count = 0;
+  while (count < 3) {
+    yield count += 1;
+  }
+}
+
+let counter = countMaker();
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
