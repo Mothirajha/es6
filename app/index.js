@@ -256,3 +256,14 @@ console.log(gloopArray.next().value);
 console.log(gloopArray.next().value);
 console.log(gloopArray.next().value);
 console.log(gloopArray.next().value);
+
+
+// Asynchronous - Promises - 'pending', 'fulfilled', 'rejected'
+let p = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Resolved promise data"), 1000 );
+  // reject("Reject promise data");
+})
+console.log(p);
+p.then(response => console.log(response))
+ .catch(error => console.log(error));
+console.log("After promise consumption");
