@@ -138,3 +138,30 @@ const triple = claci(3);
 
 console.log(double(5));
 console.log(triple(5));
+
+// Private methods
+
+const budget = () => {
+  let balance = 0;
+  let changeBal = (val) => balance += val;
+
+  const deposit20 = () => changeBal(20);
+  const withdraw20 = () => changeBal(-20);
+  const check = () => balance;
+
+  // return {
+  //   deposit20: deposit20,
+  //   withdraw20: withdraw20,
+  //   check: check
+  // }
+  return { deposit20, withdraw20, check }
+}
+
+let wallet = budget();
+console.log(wallet);
+console.log(wallet.deposit20());
+console.log(wallet.withdraw20());
+console.log(wallet.balance);
+console.log(wallet.deposit20());
+console.log(wallet.deposit20());
+console.log(wallet.check());
