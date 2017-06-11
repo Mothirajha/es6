@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
+import Gallery from './gallery';
 
 class Global extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      query: ''
+      query: '',
+      items: []
     }
   }
 
   search(){
-    console.log("search for now", this.state.query);
+    const BASEURL = "https://www.googleapis.com/books/v1/volumes?q="
+    fetch(`${BASEURL}${this.state.query}&maxResults=40`, {method: "GET"} )
+      .then(response => response.json())
+      .then(json => {
+        let {items} = json;
+        this.setState({items: items});
+        console.log({items});
+      });
   }
 
   render(){
@@ -33,6 +42,7 @@ class Global extends Component {
             </InputGroup.Addon>
           </InputGroup>
         </FormGroup>
+        <Gallery items={this.state.items}/>
       </div>
     )
   }
