@@ -98,3 +98,16 @@ for (let i = 0; i < alpha.length; i++) {
 }
 console.log(letters);
 console.log(letters.get("a"));
+
+// Clousures
+let call = () => {
+  let secret = "Funny language";
+  let reveal = () => {
+    console.log(secret);
+  }
+  return reveal;
+}
+
+console.log(call());
+let unveil = call();
+unveil();
