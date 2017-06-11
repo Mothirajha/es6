@@ -36,7 +36,9 @@ harry.petName = "Hedwig";
 console.log(harry);
 console.log(harry.info());
 
-// DataStructures
+// DataStructures //
+
+// Sets
 let set = new Set();
 set.add(1);
 set.add("Test");
@@ -57,3 +59,42 @@ let alpha = "adfadfhasdofasdfasldfhaiigfwihrisdgfhasdfgasdfasdgahsfgda";
 let splitAlpha = alpha.split("");
 let alphaSet = new Set(splitAlpha);
 console.log(alphaSet);
+
+
+// Maps
+let map = new Map();
+let key1 = "String Key";
+let key2 = {a: "funny"};
+let key3 = function () {
+  return "getLast";
+}
+map.set(key1, 'return value for a string key');
+map.set(key2, 'return value for a object');
+map.set(key3, 'return value for a function')
+console.log(map);
+
+
+let numArr = [[1, 'one'], [2, 'two'], [3, 'three']];
+let mapnumArr = new Map(numArr);
+console.log(mapnumArr);
+
+for (let element of numArr.entries()) {
+  console.log(element);
+}
+
+for (let [key, value] of numArr.entries()) {
+  console.log(key, value);
+}
+
+
+let letters = new Map();
+for (let i = 0; i < alpha.length; i++) {
+  let letter = alpha[i];
+  if (letters.has(letter)) {
+    letters.set(letter, letters.get(letter) + 1 )
+  } else {
+    letters.set(letter, 1)
+  }
+}
+console.log(letters);
+console.log(letters.get("a"));
