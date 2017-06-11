@@ -274,3 +274,58 @@ const root = 'https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699'
 fetch(root, {method: "GET"})
  .then(response => response.json())
  .then(json => console.log(json));
+
+
+// ES6
+let pwof2 = Math.pow(2, 5)
+console.log(pwof2);
+console.log("wonderful".includes("wonder"));
+
+// ES7
+let pwof3 = 3**5;
+console.log(pwof3);
+console.log([1,2,3,4,5].includes(7));
+
+// ES8
+let obj = {a: 'one', b: 'two', c: 'three'};
+let keys = Object.keys(obj);
+console.log(keys);
+let values = Object.values(obj);
+console.log(values);
+let entries = Object.entries(obj);
+console.log(entries);
+
+for(let entry of entries){
+  console.log(`key: ${entry[0]}, value: ${entry[1]}`);
+}
+
+async function asynOne() {
+  return "one";
+}
+async function asynTwo() {
+  throw new Error('Issue with async');
+}
+async function asynThree() {
+  return "three";
+}
+
+async function asynFour() {
+  const one = await asynOne();
+  console.log(one);
+  const three = await asynThree();
+  console.log(three);
+}
+
+async function asyncFive() {
+  const   [resOne, resTwo] = await Promise.all(
+    [asynOne(), asynThree()]
+  )
+  console.log(resOne, resTwo);
+}
+// asynOne().then(response => console.log(response));
+//
+// asynTwo().then(response => console.log(response))
+//          .catch(error => console.log(error));
+
+asynFour();
+asyncFive();
