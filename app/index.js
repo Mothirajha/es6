@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Global from './components/global';
 
 ReactDom.render(
-  <div>React Application!!! </div>, document.getElementById('root')
+  <Global />, document.getElementById('root')
 );
