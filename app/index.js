@@ -194,3 +194,24 @@ console.log(counter.next().value);
 console.log(counter.next().value);
 console.log(counter.next().value);
 console.log(counter.next().value);
+
+// Reset Generator values
+
+function* events() {
+  let count = 0;
+  while (true) {
+    count = count + 2;
+    let reset = yield count;
+    if (reset){
+      count = 0;
+    }
+  }
+}
+
+let event = events();
+console.log(event);
+console.log(event.next().value);
+console.log(event.next().value);
+console.log(event.next().value);
+console.log(event.next(true).value);
+console.log(event.next(false).value);
