@@ -215,3 +215,44 @@ console.log(event.next().value);
 console.log(event.next().value);
 console.log(event.next(true).value);
 console.log(event.next(false).value);
+
+
+// Iterators - Clousures
+
+const arrayIterator = (array) => {
+  let index = 0;
+  return {
+    next: () => {
+      if (index < array.length) {
+        let next = array[index];
+        index = index + 1;
+        return next;
+      }
+    }
+  }
+}
+
+let arr = [1,2,3,4]
+let loopArray = arrayIterator(arr);
+console.log(loopArray);
+console.log(loopArray.next());
+console.log(loopArray.next());
+console.log(loopArray.next());
+console.log(loopArray.next());
+// console.log(loopArray.next());
+
+// Generators
+function* garrayIterator() {
+  yield* arguments;
+  // for (let arg of arguments) {
+    // yield arg;
+  // }
+}
+
+// let garr = []
+let gloopArray  = garrayIterator(1,2,3,4);
+console.log(gloopArray);
+console.log(gloopArray.next().value);
+console.log(gloopArray.next().value);
+console.log(gloopArray.next().value);
+console.log(gloopArray.next().value);
