@@ -111,3 +111,30 @@ let call = () => {
 console.log(call());
 let unveil = call();
 unveil();
+
+// Function factories
+
+const addSuffix = (x) => {
+  const concat = (y) => {
+    return y + x;
+  }
+  return concat;
+}
+
+let addNess = addSuffix("ness");
+console.log(addNess);
+let result = addNess("Happi");
+console.log(result);
+
+// const claci = (x) => {
+//   return (y) => {
+//     return x * y;
+//   }
+// }
+const claci = (x) => (y) => x * y
+
+const double = claci(2);
+const triple = claci(3);
+
+console.log(double(5));
+console.log(triple(5));
